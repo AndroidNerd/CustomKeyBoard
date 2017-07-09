@@ -1,14 +1,11 @@
 package com.example.nerd.customkeyboard;
 
-import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.InputType;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -63,51 +60,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 e.printStackTrace();
             }
         }
-        int start;
-
-        Editable editable = editText.getText();
-        start = editText.getSelectionStart();
-        Log.e("start", start + "");
-        editable.insert(start, "h");
-        start = editText.getSelectionStart();
-        Log.e("start", start + "");
-        editable.insert(start, "e");
-        start = editText.getSelectionStart();
-        Log.e("start", start + "");
-        editable.insert(start, "l");
-        start = editText.getSelectionStart();
-        Log.e("start", start + "");
-        editable.insert(start, "l");
-        start = editText.getSelectionStart();
-        Log.e("start", start + "");
-        editable.insert(start, "o");
-        start = editText.getSelectionStart();
-        Log.e("start", start + "");
-        editable.insert(start, "!");
-        start = editText.getSelectionStart();
-        Log.e("start", start + "");
-        editable.delete(start - 2, start);//Hell
-
-        editable.insert(2, "w");
-        editable.insert(3, "i");
-
-        editText.setSelection(2, 4);
-
-        start = editText.getSelectionStart();
-        int end = editText.getSelectionEnd();
-        editable.delete(start, end);
-        start = editText.getSelectionStart();
-        editable.insert(start, "!");
-
-
-    }
-
-    public void hideKeyBoard() {
-        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(MainActivity.this.getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_IMPLICIT_ONLY);
-        if (imm.isActive())
-            imm.hideSoftInputFromWindow(MainActivity.this.getCurrentFocus().getWindowToken(), 0);
-
     }
 
     @Override
